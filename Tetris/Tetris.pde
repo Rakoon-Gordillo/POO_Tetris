@@ -21,7 +21,7 @@ void setup() {
   coordenadas = new IntList(); //Genera un arreglo dinámico de enteros (ficha)
   for (i = 0; i < 200; i++) { //Bucle de 200 veces
     cuadros.append(-1); //Agrega 200 veces -1 al arreglo del tablero (-1 es un cuadro vacío)
-  } //println(cuadros);println(cuadros);println(i);
+  }
 }
 void draw() {
   background(0, 0, 100);
