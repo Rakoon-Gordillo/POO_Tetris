@@ -1,16 +1,16 @@
-boolean pausa = false;
-boolean rotado = false;
-int filaCompleta;
-int fichaActiva = -1;
-int siguienteFicha = int(random(7));
-int prevfichaCode = -1;
-int fichaCode;
-int filasEliminadas;
-int nivel = 1;
-int i;
-int j;
-int k;
-int start = 0;
+boolean pausa = false; //booleano que determina si el juego está en pausa
+boolean rotado = false; //booleano que determina si una ficha se pudo rotar
+int filaCompleta; //entero que cuando detecta 10 cuadros (una fila) elimina esa línea
+int fichaActiva = -1; //determina la ficha en movimiento
+int siguienteFicha = int(random(7)); //determina la siguiente ficha que entrará en juego
+int prevfichaCode = -1; //variable para determinar el estado anterior de una ficha
+int fichaCode; //código del estado de una ficha
+int filasEliminadas; //marca la cantidad de líneas eliminadas
+int nivel = 1; //nivel en el que se encuentra el jugador
+int i; //variable temporal 1
+int j;// variable temporal 2
+int k; //variable temporal 3
+int start = 0; //determina el estado del juego (0 = pantalla de inicio, 1 = jugando, 2 = pantalla de perdida)
 int tiempo = 0; //variable del tiempo
 int ultimo = 70-nivel*5; //variable que determina el tiempo para que la ficha baje
 IntList coordenadas; //Variable para arreglo dinámico para las coordenadas de la ficha
@@ -25,14 +25,13 @@ void setup() {
 }
 void draw() {
   background(0, 0, 100);
-  strokeWeight(3);
-  stroke(255, 0, 0);
-  fill(0, 0, 150);
+  strokeWeight(3); //estilo tablero
+  stroke(255, 0, 0); //color bordes tablero, s.f y fichas
+  fill(0, 0, 150); //fondo tablero
   rect(20, 20, 200, 400); //tablero
-  fill(0);
+  fill(0); //estilo recuadro
   square(240, 80, 80); //Siguiente ficha
-  fill(255, 0, 0); //relleno rojo
-  stroke(255, 0, 0); //línea roja
+  fill(255, 0, 0); //color letra
   strokeWeight(1);
   textSize(20); //tamaño texto S.F.
   text("Siguiente", 240, 40);
@@ -41,9 +40,9 @@ void draw() {
   text("quitadas:", 240, 220);
   text(filasEliminadas, 240, 250);
   text("Nivel:", 240, 290);
-  if (filasEliminadas<230) {
-    nivel = int(0.5+sqrt(0.4*float(filasEliminadas)+0.25));
-    ultimo = 70-nivel*5;
+  if (filasEliminadas<230) { //de ser falsa, el nivel es 10
+    nivel = int(0.5+sqrt(0.4*float(filasEliminadas)+0.25)); //determina el nivel respecto a la cantidad de filas eliminadas
+    ultimo = 70-nivel*5; //determina la velocidad a la que bajan las fichas respecto al nivel
   }
   text(nivel, 240, 320);
   pushStyle();
