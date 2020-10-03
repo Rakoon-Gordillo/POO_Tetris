@@ -46,7 +46,7 @@ void draw() {
   }
   text(nivel, 240, 320);
   pushStyle();
-  if (!pausa) {
+  if (!pausa) { //muestra, si el juego no está pausado, la siguiente ficha
     if (siguienteFicha == 0) { //T
       fill(0, 255, 0);
       square(250, 100, 20);
