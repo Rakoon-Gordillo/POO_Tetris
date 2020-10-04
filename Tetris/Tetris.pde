@@ -132,10 +132,10 @@ void draw() {
     triangle(140, 345, 145, 350, 140, 355);
   } else { //jugando
     stroke(120, 30);
-    for(int i = 40; i<220; i+=20){
+    for (int i = 40; i<220; i+=20) {
       line(i, 20, i, 420);
     }
-    for(int i = 120; i<420; i+=20){
+    for (int i = 120; i<420; i+=20) {
       line(20, i, 220, i);
     }
     fill(255, 0, 0); //límite superior rojo del tablero
@@ -155,7 +155,6 @@ void draw() {
         fichaCode = 18; //escoge el cuadrado
       }
       if (fichaCode == 0) { //T
-        fichaActiva = 0;
         coordenadas.set(0, 5);
         coordenadas.set(1, 18);
         coordenadas.set(2, 6);
@@ -165,7 +164,6 @@ void draw() {
         coordenadas.set(6, 7);
         coordenadas.set(7, 18);
       } else if (fichaCode == 1) {//-|
-        fichaActiva = 0;
         coordenadas.set(0, 5);
         coordenadas.set(1, 18);
         coordenadas.set(2, 6);
@@ -175,7 +173,6 @@ void draw() {
         coordenadas.set(6, 6);
         coordenadas.set(7, 19);
       } else if (fichaCode == 2) { // T inversa
-        fichaActiva = 0;
         coordenadas.set(0, 5);
         coordenadas.set(1, 17);
         coordenadas.set(2, 6);
@@ -185,7 +182,6 @@ void draw() {
         coordenadas.set(6, 7);
         coordenadas.set(7, 17);
       } else if (fichaCode == 3) { //|-
-        fichaActiva = 0;
         coordenadas.set(0, 5);
         coordenadas.set(1, 17);
         coordenadas.set(2, 5);
@@ -195,7 +191,6 @@ void draw() {
         coordenadas.set(6, 6);
         coordenadas.set(7, 18);
       } else if (fichaCode == 4) { //L
-        fichaActiva = 1;
         coordenadas.set(0, 5);
         coordenadas.set(1, 17);
         coordenadas.set(2, 5);
@@ -205,7 +200,6 @@ void draw() {
         coordenadas.set(6, 6);
         coordenadas.set(7, 17);
       } else if (fichaCode == 5) { //L boca abajo
-        fichaActiva = 1;
         coordenadas.set(0, 5);
         coordenadas.set(1, 17);
         coordenadas.set(2, 5);
@@ -215,7 +209,6 @@ void draw() {
         coordenadas.set(6, 7);
         coordenadas.set(7, 18);
       } else if (fichaCode == 6) {//1
-        fichaActiva = 1;
         coordenadas.set(0, 5);
         coordenadas.set(1, 19);
         coordenadas.set(2, 6);
@@ -225,7 +218,6 @@ void draw() {
         coordenadas.set(6, 6);
         coordenadas.set(7, 19);
       } else if (fichaCode == 7) {//L acostada
-        fichaActiva = 1;
         coordenadas.set(0, 5);
         coordenadas.set(1, 17);
         coordenadas.set(2, 6);
@@ -235,7 +227,6 @@ void draw() {
         coordenadas.set(6, 7);
         coordenadas.set(7, 18);
       } else if (fichaCode == 8) { //J
-        fichaActiva = 2;
         coordenadas.set(0, 5);
         coordenadas.set(1, 17);
         coordenadas.set(2, 6);
@@ -245,7 +236,6 @@ void draw() {
         coordenadas.set(6, 6);
         coordenadas.set(7, 19);
       } else if (fichaCode == 9) { //J acostada
-        fichaActiva = 2;
         coordenadas.set(0, 5);
         coordenadas.set(1, 17);
         coordenadas.set(2, 5);
@@ -255,7 +245,6 @@ void draw() {
         coordenadas.set(6, 7);
         coordenadas.set(7, 17);
       } else if (fichaCode == 10) { // J inversa
-        fichaActiva = 2;
         coordenadas.set(0, 5);
         coordenadas.set(1, 17);
         coordenadas.set(2, 5);
@@ -265,7 +254,6 @@ void draw() {
         coordenadas.set(6, 6);
         coordenadas.set(7, 19);
       } else if (fichaCode == 11) { //Negador
-        fichaActiva = 2;
         coordenadas.set(0, 5);
         coordenadas.set(1, 18);
         coordenadas.set(2, 6);
@@ -275,7 +263,6 @@ void draw() {
         coordenadas.set(6, 7);
         coordenadas.set(7, 18);
       } else if (fichaCode == 12) { //S
-        fichaActiva = 3;
         coordenadas.set(0, 5);
         coordenadas.set(1, 17);
         coordenadas.set(2, 6);
@@ -285,7 +272,6 @@ void draw() {
         coordenadas.set(6, 7);
         coordenadas.set(7, 18);
       } else if (fichaCode == 13) { //Silla
-        fichaActiva = 3;
         coordenadas.set(0, 5);
         coordenadas.set(1, 18);
         coordenadas.set(2, 5);
@@ -295,7 +281,6 @@ void draw() {
         coordenadas.set(6, 6);
         coordenadas.set(7, 18);
       } else if (fichaCode == 14) { //Z
-        fichaActiva = 4;
         coordenadas.set(0, 5);
         coordenadas.set(1, 18);
         coordenadas.set(2, 6);
@@ -305,7 +290,6 @@ void draw() {
         coordenadas.set(6, 7);
         coordenadas.set(7, 17);
       } else if (fichaCode == 15) { //Zilla
-        fichaActiva = 4;
         coordenadas.set(0, 5);
         coordenadas.set(1, 17);
         coordenadas.set(2, 5);
@@ -315,7 +299,6 @@ void draw() {
         coordenadas.set(6, 6);
         coordenadas.set(7, 19);
       } else if (fichaCode == 16) { //Columna
-        fichaActiva = 5;
         coordenadas.set(0, 5);
         coordenadas.set(1, 17);
         coordenadas.set(2, 5);
@@ -325,7 +308,6 @@ void draw() {
         coordenadas.set(6, 5);
         coordenadas.set(7, 20);
       } else if (fichaCode == 17) { //Fila
-        fichaActiva = 5;
         coordenadas.set(0, 4);
         coordenadas.set(1, 18);
         coordenadas.set(2, 5);
@@ -335,7 +317,6 @@ void draw() {
         coordenadas.set(6, 7);
         coordenadas.set(7, 18);
       } else if (fichaCode == 18) { //Cuadrado
-        fichaActiva = 6;
         coordenadas.set(0, 5);
         coordenadas.set(1, 17);
         coordenadas.set(2, 5);
@@ -460,8 +441,8 @@ void keyPressed() { //println(keyCode);
       filasEliminadas = 0;
       nivel = 1;
       pausa = false;
-      for (int i = 0; i < 200; i++) {
-        cuadros.set(i, -1);
+      for (int k = 0; k < 200; k++) {
+        cuadros.set(k, -1);
       }
     }
     start = 1;
@@ -471,7 +452,6 @@ void keyPressed() { //println(keyCode);
     } else if (!pausa) {
       pausa = true;
     }
-    println(pausa);
   } else if (fichaActiva != -1 && start == 1 && !pausa) {
     if (key == 's' || key == 'S' || keyCode == DOWN) { //S para bajar 1 línea
       confirmarBajamiento();
@@ -484,17 +464,15 @@ void keyPressed() { //println(keyCode);
       tiempo = 0;
     } else if (keyCode == LEFT || key == 'a' || key == 'A') { //A para mover a la izquierda
       if (coordenadas.get(0)-1>0&&cuadros.get(((coordenadas.get(1)-1)*10)+coordenadas.get(0)-2)==-1&&cuadros.get(((coordenadas.get(3)-1)*10)+coordenadas.get(2)-2)==-1&&cuadros.get(((coordenadas.get(5)-1)*10)+coordenadas.get(4)-2)==-1&&cuadros.get(((coordenadas.get(7)-1)*10)+coordenadas.get(6)-2)==-1) {
-        coordenadas.sub(0, 1);
-        coordenadas.sub(2, 1);
-        coordenadas.sub(4, 1);
-        coordenadas.sub(6, 1);
+        for (int l=0; l<8; l+=2) {
+          coordenadas.sub(l, 1);
+        }
       }
     } else if (key == 'd' || key == 'D' || keyCode == RIGHT) { //D para mover a la derecha
       if (coordenadas.get(6)+1<11&&cuadros.get(((coordenadas.get(1)-1)*10)+coordenadas.get(0))==-1&&cuadros.get(((coordenadas.get(3)-1)*10)+coordenadas.get(2))==-1&&cuadros.get(((coordenadas.get(5)-1)*10)+coordenadas.get(4))==-1&&cuadros.get(((coordenadas.get(7)-1)*10)+coordenadas.get(6))==-1) {
-        coordenadas.increment(0);
-        coordenadas.increment(2);
-        coordenadas.increment(4);
-        coordenadas.increment(6);
+        for (int l=0; l<8; l+=2) {
+          coordenadas.increment(l);
+        }
       }
     } else if (key == 'E' || key == 'e') { //E para girar en sentido horario
       if (fichaCode%4 == 3 && fichaCode<12) {  //fichas de 4 posiciones
@@ -559,15 +537,13 @@ void keyPressed() { //println(keyCode);
 }
 void confirmarBajamiento() { //confirma si puede bajar
   if (coordenadas.get(1)!=1&&coordenadas.get(3)!=1&&coordenadas.get(5)!=1&&cuadros.get(((coordenadas.get(1)-2)*10)+coordenadas.get(0)-1)==-1&&cuadros.get(((coordenadas.get(3)-2)*10)+coordenadas.get(2)-1)==-1&&cuadros.get(((coordenadas.get(5)-2)*10)+coordenadas.get(4)-1)==-1&&cuadros.get(((coordenadas.get(7)-2)*10)+coordenadas.get(6)-1)==-1) {
-    coordenadas.sub(1, 1);
-    coordenadas.sub(3, 1);
-    coordenadas.sub(5, 1);
-    coordenadas.sub(7, 1);
+    for (int l=1; l<8; l+=2) {
+      coordenadas.sub(l, 1);
+    }
   } else { //de lo contrario, coloca la ficha
-    cuadros.set(((coordenadas.get(1)-1)*10)+coordenadas.get(0)-1, fichaActiva);
-    cuadros.set(((coordenadas.get(3)-1)*10)+coordenadas.get(2)-1, fichaActiva);
-    cuadros.set(((coordenadas.get(5)-1)*10)+coordenadas.get(4)-1, fichaActiva);
-    cuadros.set(((coordenadas.get(7)-1)*10)+coordenadas.get(6)-1, fichaActiva);
+    for (int l=1; l<8; l+=2) {
+      cuadros.set(((coordenadas.get(l)-1)*10)+coordenadas.get(l-1)-1, fichaActiva);
+    }
     fichaActiva = -1;
   }
 }
