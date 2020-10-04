@@ -7,9 +7,6 @@ int prevfichaCode = -1; //variable para determinar el estado anterior de una fic
 int fichaCode; //código del estado de una ficha
 int filasEliminadas; //marca la cantidad de líneas eliminadas
 int nivel = 1; //nivel en el que se encuentra el jugador
-int i; //variable temporal 1
-int j;// variable temporal 2
-int k; //variable temporal 3
 int start = 0; //determina el estado del juego (0 = pantalla de inicio, 1 = jugando, 2 = pantalla de perdida)
 int tiempo = 0; //variable del tiempo
 int ultimo = 70-nivel*5; //variable que determina el tiempo para que la ficha baje
@@ -19,7 +16,7 @@ void setup() {
   size(340, 440); //inicializa interfaz
   cuadros = new IntList(); //Genera un arreglo dinámico de enteros (tablero)
   coordenadas = new IntList(); //Genera un arreglo dinámico de enteros (ficha)
-  for (i = 0; i < 200; i++) { //Bucle de 200 veces
+  for (int i = 0; i < 200; i++) { //Bucle de 200 veces
     cuadros.append(-1); //Agrega 200 veces -1 al arreglo del tablero (-1 es un cuadro vacío)
   }
 }
@@ -134,9 +131,16 @@ void draw() {
     line(100, 350, 140, 350);
     triangle(140, 345, 145, 350, 140, 355);
   } else { //jugando
+    stroke(120, 30);
+    for(int i = 40; i<220; i+=20){
+      line(i, 20, i, 420);
+    }
+    for(int i = 120; i<420; i+=20){
+      line(20, i, 220, i);
+    }
     fill(255, 0, 0); //límite superior rojo del tablero
     rect(20, 20, 200, 80);
-    for (i = 255; i > 0; i-=5) { //líneas de peligro
+    for (int i = 255; i > 0; i-=5) { //líneas de peligro
       stroke(255, 0, 0, i);
       line(20, (-i/5)+151, 220, (-i/5)+151);
     }
@@ -343,11 +347,11 @@ void draw() {
       }
     }
     stroke(255, 0, 0); //bordes de las fichas
-    for (i=0; i<200; i++) { //lee el color de cada cuadro del tablero
+    for (int i=0; i<200; i++) { //lee el color de cada cuadro del tablero
       if (i%10 == 0) {
         if (filaCompleta == 10) {
           filasEliminadas+=1;
-          for (k=1; k<11; k++) {
+          for (int k=1; k<11; k++) {
             cuadros.remove(i-k);
             cuadros.append(-1);
           }
@@ -411,7 +415,7 @@ void draw() {
       fill(255); //Blanco - Cuadrado
     }//print(fichaActiva);print(" en posición ");println(fichaCode);
     if (!pausa) {
-      for (i=0; i<7; i+=2) { //dibuja el tetromino
+      for (int i=0; i<7; i+=2) { //dibuja el tetromino
         square((coordenadas.get(i))*20, (21-coordenadas.get(i+1))*20, 20);
       }
       if (start == 1) { //avanzar tiempo para bajar figura
@@ -456,7 +460,7 @@ void keyPressed() { //println(keyCode);
       filasEliminadas = 0;
       nivel = 1;
       pausa = false;
-      for (i = 0; i < 200; i++) {
+      for (int i = 0; i < 200; i++) {
         cuadros.set(i, -1);
       }
     }
